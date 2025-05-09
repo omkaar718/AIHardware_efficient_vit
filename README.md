@@ -1,5 +1,7 @@
 ## Hardware-Accelerated Pruning for Efficient Vision Transformers
 
+<img width="800" alt="sample_results" src="https://github.com/user-attachments/assets/e997a384-feff-494d-b4c3-7fb654c29ee1" />
+
 ### Environment setup
 ```bash
 git clone https://github.com/open-mmlab/mmcv.git
