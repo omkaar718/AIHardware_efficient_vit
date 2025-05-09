@@ -1,0 +1,16 @@
+#!/bin/sh -l
+# FILENAME:  job_vitpose.sub
+#SBATCH --nodes=1 --gpus-per-node=1 
+#SBATCH -A ykim24-n
+#SBATCH --job-name job_vitpose
+#SBATCH --time=240:00:00
+#SBATCH --job-name vitpose_base
+
+
+module load conda
+
+conda activate /home/oprabhun/.conda/envs/cent7/2024.02-py311/venv_vitpose_1
+conda info --envs
+export CUDA_LAUNCH_BLOCKING=1
+export TORCH_USE_CUDA_DSA=1
+python tools/test.py configs/body/2d_kpt_sview_rgb_img/topdown_heatmap/coco/ViTPose_base_coco_256x192.py /scratch/gilbreth/oprabhun/efficient_vitpose/orig_pretrained_models/vitpose-b.pth
